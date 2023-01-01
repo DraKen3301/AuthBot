@@ -1,0 +1,7 @@
+Flask==2.1.1
+Frozen-Flask==0.18
+httpx
+deta
+gunicorn
+nextcord
+onami

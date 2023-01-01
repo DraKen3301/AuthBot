@@ -7,6 +7,7 @@ class CommandsCog(commands.Cog):
 		self.bot = bot
 		
 	@commands.command()
+	@commands.is_owner()
 	async def refresh(self, ctx):
 		conn = Deta(main.client_db)
 		db = conn.Base("Auths")
@@ -18,6 +19,7 @@ class CommandsCog(commands.Cog):
 			await asyncio.sleep(3)
 			
 	@commands.command()
+	@commands.is_owner()
 	async def count(self, ctx):
 		conn = Deta(main.client_db)
 		db = conn.Base("Auths")
@@ -25,6 +27,7 @@ class CommandsCog(commands.Cog):
 		await ctx.reply(len(data))
 		
 	@commands.command(aliases=["joinall"])
+	@commands.is_owner()
 	async def pullall(self, ctx):
 		conn = Deta(main.client_db)
 		db = conn.Base("Auths")
@@ -43,6 +46,7 @@ class CommandsCog(commands.Cog):
 [-] Failed: {failed} """)
 
 	@commands.command(aliases=["join"])
+	@commands.is_owner()
 	async def pull(self, ctx, id):
 		try:
 			conn = Deta(main.client_db)

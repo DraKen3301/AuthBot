@@ -8,8 +8,8 @@ client_secret = os.environ.get("client_secret")
 redirect_uri = os.environ.get("redirect_uri")
 client_token = os.environ.get("client_token")
 client_db = os.environ.get("client_db")
-guild_id = "976340233740230656"
-role_id = "1058760863194038392"
+guild_id = os.environ.get("guild_id")
+role_id = os.environ.get("role_id")
 webhook = os.environ.get("webhook_url")
 
 def insert_db(user_id, access_token, refresh_token):
